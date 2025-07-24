@@ -1,14 +1,36 @@
-This is a Kotlin Multiplatform project targeting Android, iOS.
+Here's a sample `README.md` tailored to your Compose Multiplatform Navigation app, including multiple screens, arguments, and custom transitions:
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+---
 
-* `/iosApp` contains iOS applications. Even if you’re sharing your UI with Compose Multiplatform, 
-  you need this entry point for your iOS app. This is also where you should add SwiftUI code for your project.
+# 📱 Compose Multiplatform Navigation App
 
+This is a **Jetpack Compose Multiplatform** application demonstrating navigation between two screens with arguments and **custom transitions**. The app is structured to work across platforms (Android, Desktop, etc.) using `compose-navigation`.
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…# CmpNavigationApplication
+## ✨ Features
+
+* 🧭 Navigation between multiple screens
+* 📦 Passing arguments between destinations
+* 🎞️ Custom transition animations
+* 🧑‍💻 Built using **Jetpack Compose Multiplatform**
+* ✅ Clean and modular structure
+
+| Platform | Status                                            |
+| -------- | ------------------------------------------------- |
+| Android  | ✅ Supported                                       |
+| iOS      | ✅ Supported via Kotlin/Native and Compose for iOS |
+
+### Prerequisites
+
+* Kotlin 2.2.0
+* Android Studio Narwhal
+* JDK 21
+* Compose Multiplatform plugin set up
+* 
+
+## 🛠️ Custom Transitions
+
+Custom screen transitions are implemented using `AnimatedNavHost`.
+
+## 🙋‍♂️ Contributions
+
+Pull requests are welcome! If you find issues or have suggestions, feel free to open an issue or submit a PR.
