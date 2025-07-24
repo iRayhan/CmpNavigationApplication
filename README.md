@@ -10,10 +10,10 @@ This is a **Jetpack Compose Multiplatform** application demonstrating navigation
 * 🧑‍💻 Built using **Jetpack Compose Multiplatform**
 * ✅ Clean and modular structure
 
-| Platform | Status                                            |
-| -------- | ------------------------------------------------- |
-| Android  | ✅ Supported                                       |
-| iOS      | ✅ Supported via Kotlin/Native and Compose for iOS |
+| Platform | Status                                           |
+| -------- | ------------------------------------------------ |
+| Android  | ✅ Supported                                      |
+| iOS      | ✅ Supported |
 
 ### Prerequisites
 
