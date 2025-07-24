@@ -24,7 +24,7 @@ This is a **Jetpack Compose Multiplatform** application demonstrating navigation
 
 ## 🛠️ Custom Transitions
 
-Custom screen transitions are implemented using `AnimatedContentNavigationScope`.
+Custom screen transitions are implemented using `AnimatedContentTransitionScope`.
 
 ## 🙋‍♂️ Contributions
 
