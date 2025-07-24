@@ -1,5 +1,7 @@
 package com.example.cmpnavigationapplication.ui.presentation
 
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -18,7 +20,12 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.cmpnavigationapplication.ui.data.ScreenData
+import androidx.navigation.toRoute
+import cmpnavigationapplication.composeapp.generated.resources.Res
+import cmpnavigationapplication.composeapp.generated.resources.screen_1
+import cmpnavigationapplication.composeapp.generated.resources.screen_2
+import com.example.cmpnavigationapplication.ui.data.ScreenRoute
+import org.jetbrains.compose.resources.stringResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -58,13 +65,16 @@ fun StartScreen(
     // Get current back stack entry
     val backStackEntry by navController.currentBackStackEntryAsState()
 
+    val screen1Route = ScreenRoute.Screen1Route(stringResource(Res.string.screen_1))
+    val screen2Route = ScreenRoute.Screen2Route(stringResource(Res.string.screen_2))
+
     // Get the name of the current screen
-    var currentScreen = ""
+    var currentScreen = screen1Route.title
     backStackEntry?.destination?.let {
         currentScreen = when {
-            it.hasRoute(ScreenData.Screen1Route::class) -> ScreenData.Screen1Route.name
-            it.hasRoute(ScreenData.Screen2Route::class) -> ScreenData.Screen2Route.name
-            else -> ScreenData.Screen1Route.name
+            it.hasRoute(ScreenRoute.Screen1Route::class) -> screen1Route.title
+            it.hasRoute(ScreenRoute.Screen2Route::class) -> screen2Route.title
+            else -> currentScreen
         }
     }
 
@@ -82,16 +92,35 @@ fun StartScreen(
 
         NavHost(
             navController = navController,
-            startDestination = ScreenData.Screen1Route,
+            startDestination = screen1Route,
+            enterTransition = {
+                slideInHorizontally { it }
+            },
+            popEnterTransition = {
+                slideInHorizontally { -it }
+            },
+            exitTransition = {
+                slideOutHorizontally { -it }
+            },
+            popExitTransition = {
+                slideOutHorizontally { it }
+            },
             modifier = Modifier
                 .fillMaxSize()
-                .padding(innerPadding)
-        ) {
-            composable<ScreenData.Screen1Route> {
-                Screen1(navController)
+                .padding(innerPadding),
+
+            ) {
+            composable<ScreenRoute.Screen1Route> {
+                Screen1 { list ->
+                    navController.navigate(screen2Route.apply {
+                        dataList = list
+                    })
+                }
             }
-            composable<ScreenData.Screen2Route> {
-                Screen2(navController)
+            composable<ScreenRoute.Screen2Route> {
+                Screen2(
+                    it.toRoute<ScreenRoute.Screen2Route>().dataList
+                )
             }
         }
     }
