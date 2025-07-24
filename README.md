@@ -21,11 +21,10 @@ This is a **Jetpack Compose Multiplatform** application demonstrating navigation
 * Android Studio Narwhal
 * JDK 21
 * Compose Multiplatform plugin set up
-* 
 
 ## 🛠️ Custom Transitions
 
-Custom screen transitions are implemented using `AnimatedNavHost`.
+Custom screen transitions are implemented using `AnimatedContentNavigationScope`.
 
 ## 🙋‍♂️ Contributions
 
