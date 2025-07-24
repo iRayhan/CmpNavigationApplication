@@ -1,6 +1,6 @@
 # 📱 Compose Multiplatform Navigation App
 
-This is a **Jetpack Compose Multiplatform** application demonstrating navigation between two screens with arguments and **custom transitions**. The app is structured to work across platforms (Android, Desktop, etc.) using `compose-navigation`.
+This is a **Jetpack Compose Multiplatform** application demonstrating navigation between two screens with arguments and **custom transitions**. The app is structured to work across platforms (Android, IOS, etc.) using `compose-navigation`.
 
 ## ✨ Features
 
