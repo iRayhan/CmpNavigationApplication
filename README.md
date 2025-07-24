@@ -1,7 +1,3 @@
-Here's a sample `README.md` tailored to your Compose Multiplatform Navigation app, including multiple screens, arguments, and custom transitions:
-
----
-
 # 📱 Compose Multiplatform Navigation App
 
 This is a **Jetpack Compose Multiplatform** application demonstrating navigation between two screens with arguments and **custom transitions**. The app is structured to work across platforms (Android, Desktop, etc.) using `compose-navigation`.
